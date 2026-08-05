@@ -348,8 +348,6 @@ display(
 );
 ```
 
-[Arkansas's effective teacher licensure](https://dese.ade.arkansas.gov/Offices/educator-effectiveness/licensure-exceptions/effective-teacher-licensure-etl) rules allow teachers to teach one grade above and one grade below the grade range for which they are licensed. Uniquely, this policy allows middle school certified teachers to both teach down to elementary students and teach up to high school students. This flexibility has led to speculation that low retention among middle school subjects reflects teachers using middle school as an "on ramp" into teaching: they begin with a middle school license, establish themselves in a district, and then move into elementary or high school jobs. The data show otherwise. Low within-subject retention in middle school represents churn between middle school subjects.
-
 ## Special Education: A Large Post-Pandemic Shift
 
 Special education saw the sharpest post-pandemic decline in within-subject retention, falling by more than 6 percentage points. This decline was not driven by teachers leaving Arkansas public schools. From 2024 to 2026, special education teachers exited Arkansas public schools at an annual rate of 11 percent, up only 1 percentage point from pre-pandemic levels. The larger change was among those who remained in the workforce: Arkansas's SPED teachers are increasingly switching to non-classroom roles.
@@ -403,7 +401,7 @@ In contrast, the movement to curriculum and instructional coaching roles grew fa
 // Shorter labels — the long names overflow even when rotated.
 function shortDestination(s) {
   return s
-    .replace(/Non-academic role \(99 series\)/, "Non-academic (99)")
+    .replace(/Non-academic courses/, "Non-academic courses")
     .replace(/Coaching & curriculum leadership/, "Instructional coaching")
     .replace(/Interventionist \/ specialist/, "Interventionist")
     .replace(/Other teaching roles/, "Other teaching")
@@ -437,7 +435,7 @@ display(
     title:
       "Where do SPED switchers go? Curriculum and instructional coaching roles dominate",
     subtitle:
-      "Instructional coaching and curriculum leadership grew nearly 4× — faster than overall switching — accounting for most of the post-COVID increase in identifiable destinations. Non-academic (99 series) reflects switchers whose destination role isn't identifiable from the data.",
+      "Instructional coaching and curriculum leadership grew nearly 4× — faster than overall switching — accounting for most of the post-COVID increase in identifiable destinations.",
     caption: downloadLink(
       spedDestinationsCsvUrl,
       "OEP-Arkansas-SPED-Destinations.csv",

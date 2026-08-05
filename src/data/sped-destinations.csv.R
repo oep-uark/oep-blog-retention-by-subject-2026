@@ -120,7 +120,8 @@ sped_switchers_coded <- sped_switchers %>%
       jobcode %in% c(9040, 9041, 9042) ~ "Adult education",
       jobcode %in% c(7006, 7140) ~ "Other teaching",
       # 6-digit codes: older course codes (data quality) vs. 99 series (non-academic)
-      jobcode >= 100000 & jobcode <= 699999 ~ "Course code (older - data quality)",
+      jobcode >= 100000 & jobcode <= 199999 ~ "Pre-K",
+      jobcode >= 200000 & jobcode <= 699999 ~ "Course code (older - data quality)",
       jobcode >= 990000 ~ "Non-academic (99 series)",
       # Classified District admin
       jobcode %in% c(604, 606, 612, 614) ~ "District admin",
@@ -158,11 +159,12 @@ job_priority <- c(
   "Specialized teaching" = 9,
   "Other admin/support" = 10,
   "Adult education" = 11,
-  "Other teaching" = 12,
-  "Operations/support staff" = 13,
-  "Course code (older - data quality)" = 14,
-  "Non-academic (99 series)" = 15,
-  "Other/Unknown" = 16
+  "Pre-K" = 12,
+  "Other teaching" = 13,
+  "Operations/support staff" = 14,
+  "Course code (older - data quality)" = 15,
+  "Non-academic (99 series)" = 16,
+  "Other/Unknown" = 17
 )
 
 sped_switchers_collapsed <- sped_switchers_coded %>%
@@ -188,9 +190,9 @@ sped_destination_rates <- sped_outcomes %>%
     by = c("research_id", "fiscal_year")
   ) %>%
   group_by(period) %>%
-  mutate(teachers_before = n()) %>%  # all SPED teacher-years in this period
+  mutate(teachers_before = n()) %>% # all SPED teacher-years in this period
   ungroup() %>%
-  filter(!is.na(job_category)) %>%   # only switchers populate the numerator
+  filter(!is.na(job_category)) %>% # only switchers populate the numerator
   count(period, job_category, teachers_before, name = "n_teachers") %>%
   mutate(
     final_category = case_when(
@@ -201,10 +203,11 @@ sped_destination_rates <- sped_outcomes %>%
         "Administration",
       job_category %in% c("Counselor", "Student support", "Library/media") ~
         "Counseling & student support",
+      job_category == "Pre-K" ~ "Pre-K",
       job_category %in% c("Specialized teaching", "Other teaching", "Adult education") ~
         "Other teaching roles",
-      job_category == "Non-academic (99 series)" ~ "Non-academic role (99 series)",
-      TRUE ~ "Other / unclear"
+      job_category == "Non-academic (99 series)" ~ "Non-academic courses",
+      TRUE ~ "Other"
     )
   ) %>%
   group_by(period, teachers_before, final_category) %>%
