@@ -393,7 +393,7 @@ display(
 
 What types of non-classroom roles are these SPED teachers moving to? Many SPED switches were to instructional coaching and curriculum leadership roles. Nearly 2 percent of SPED teachers in the state moved into these types of roles, more than 4 times the pre-pandemic rate.
 
-The remaining movement is driven by an increase in SPED teachers who are assigned only to courses the state specifically designates as non-academic, such as study halls. Districts may use this categorization to represent a variety of on-the-ground jobs. The share of SPED teachers assigned to these unidentifiable jobs grew at the same pace as switching overall.
+The remaining movement is driven by an increase in SPED teachers who are assigned only to courses the state specifically designates as non-academic, such as study halls. Districts may use this categorization to represent a variety of on-the-ground jobs. The share of SPED teachers assigned to these jobs grew at the same pace as switching overall.
 
 In contrast, the movement to curriculum and instructional coaching roles grew faster than the overall switcher rate. Before the pandemic, these roles accounted for only 20 percent of switchers. After the pandemic, that share climbed to 27 percent.
 
