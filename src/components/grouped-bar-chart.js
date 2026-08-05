@@ -35,16 +35,20 @@ import { makeLegend, caption, chartHeader } from "./utils.js";
  *                                                          default `${v.toFixed(0)}%`
  *   @param {string|Node} [options.caption]               - Optional caption
  */
-export function groupedBarChart(data, categories, {
-  width = 640,
-  height,
-  yLabel = "Percent",
-  yDomain,
-  valueFormat = (v) => `${Math.round(v)}%`,
-  caption: captionContent,
-  title,
-  subtitle,
-} = {}) {
+export function groupedBarChart(
+  data,
+  categories,
+  {
+    width = 640,
+    height,
+    yLabel = "Percent",
+    yDomain,
+    valueFormat = (v) => `${Math.round(v)}%`,
+    caption: captionContent,
+    title,
+    subtitle,
+  } = {},
+) {
   const outerDomain = [...new Set(data.map((d) => d.x))];
   const groupDomain = categories.map((c) => c.label);
 
@@ -155,7 +159,8 @@ export function groupedBarChart(data, categories, {
     gridCols.push(`${groupDomain.length}fr`);
     cells.push(html`<div>${outerDomain[i]}</div>`);
   }
-  const labelRow = html`<div style="
+  const labelRow = html`<div
+    style="
     display: grid;
     grid-template-columns: ${gridCols.join(" ")};
     padding-left: ${MARGIN_LEFT}px;
@@ -165,23 +170,30 @@ export function groupedBarChart(data, categories, {
     font-size: 13px;
     color: #222;
     text-align: center;
-    ${labelRotate !== 0 ? `min-height: 80px;` : ""}
-  ">${cells.map((c) =>
-    labelRotate === 0
-      ? c
-      : html`<div style="display: flex; justify-content: center;">
-          <div style="position: relative; width: 0;">
-            <div style="
+    ${labelRotate !== 0 ? `min-height: 110px;` : ""}
+  "
+  >
+    ${cells.map((c) =>
+      labelRotate === 0
+        ? c
+        : html`<div style="display: flex; justify-content: center;">
+            <div style="position: relative; width: 0;">
+              <div
+                style="
               position: absolute;
               top: 0;
               right: 0;
               transform: rotate(${labelRotate}deg);
               transform-origin: top right;
               white-space: nowrap;
-            ">${c}</div>
-          </div>
-        </div>`,
-  )}</div>`;
+            "
+              >
+                ${c}
+              </div>
+            </div>
+          </div>`,
+    )}
+  </div>`;
 
   // --- Hover fade: dim non-hovered groups across bars, labels, and legend ---
   for (const el of chart.querySelectorAll("rect, text")) {
