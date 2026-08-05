@@ -284,7 +284,7 @@ display(
 );
 ```
 
-Over the past three years, true exit rates for each subject varied from 7 to 11 percent, too narrow a range to explain the large gaps in within-subject retention. The remaining attrition reflects movement to other roles within Arkansas public schools; either to instructional roles in a different subject or to non-instructional roles.
+Over the past three years, true exit rates for each subject varied from 7 to 11 percent, too narrow a range to explain the large gaps in within-subject retention. The remaining attrition reflects movement to other roles within Arkansas public schools, either to instructional roles in a different subject or to non-instructional roles.
 
 For example, since 2024, middle school teachers have changed subjects more often than teachers in any other subject. Special education teachers, on the other hand, have switched to non-teaching roles more than any other type of teacher. For both cases, we need to take a closer look at where these teachers are going to understand what low within-subject retention means in practice.
 
@@ -292,7 +292,7 @@ For example, since 2024, middle school teachers have changed subjects more often
 
 Core-subject middle school teachers have the lowest within-subject retention of any subject. Over the last three years, more than one in three middle school teachers left their subject. But only about 10 percent of these teachers exit Arkansas public schools entirely, a similar rate to all other subjects. Instead, switching between subjects drives these low retention rates, accounting for around two-thirds of within-subject attrition - 20 percent of all core middle school teachers.
 
-Most of this switching is between middle school-level subjects. In 2025-26, around 8 percent of all 2024-25 middle school teachers switched to another middle school-level subject - about 40 percent of all observed switching. By comparison, 3 percent moved down to teach elementary, and 4 percent moved up to teach high school, accounting for another 40 percent of the switching. The remainder is into non-core subjects.
+Most of this switching is between middle school-level subjects. In 2025-26, around 8 percent of all 2024-25 middle school teachers switched to another middle school-level subject - about 40 percent of all observed switching. By comparison, 3 percent moved down to teach elementary, and 4 percent moved up to teach high school, accounting for another 40 percent of the switching. The remaining switching is to non-core subjects.
 
 ```js
 import { groupedBarChart } from "./components/grouped-bar-chart.js";
@@ -395,8 +395,7 @@ display(
 
 What types of non-classroom roles are these SPED teachers moving to? Many SPED switches were to instructional coaching and curriculum leadership roles. Nearly 2 percent of SPED teachers in the state moved into these types of roles, more than 4 times the pre-pandemic rate.
 
-The remaining movement is driven by an increase in SPED teachers who are assigned to only specifically non-academic courses, such as study halls. Districts may use this categorization to represent a variety of on-the-ground jobs.
-The share of SPED teachers assigned to these unidentifiable jobs grew at the same pace as switching overall.
+The remaining movement is driven by an increase in SPED teachers who are assigned only to courses the state specifically designates as non-academic, such as study halls. Districts may use this categorization to represent a variety of on-the-ground jobs. The share of SPED teachers assigned to these unidentifiable jobs grew at the same pace as switching overall.
 
 In contrast, the movement to curriculum and instructional coaching roles grew faster than the overall switcher rate. Before the pandemic, these roles accounted for only 20 percent of switchers. After the pandemic, that share climbed to 27 percent.
 
